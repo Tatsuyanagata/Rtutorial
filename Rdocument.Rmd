@@ -1,0 +1,43 @@
+---
+title: "Document"
+author: "Tatsuyanagata"
+date: "January 23, 2017"
+output: html_document
+---
+
+## Introduction
+This is the data description
+
+```{r setup, echo=FALSE}
+#Load the data
+  ourdata <- read.csv("data/Boats.csv", header = TRUE, sep=",")
+
+Firstrows <- head(ourdata[1:5,1:3])
+Firstcolumns <- ourdata[1:5, c(1,4,8,11)]
+mycorrelation <- cor(Firstrows)
+colnames(ourdata) <- substring(colnames(ourdata), first = 1, last = 4)
+
+Firstrows <- cbind(Firstrows, 1:nrow(Firstrows))
+mycorrelation
+Firstrows <- cbind(Firstrows, 1:nrow(Firstrows))
+mycorrelation
+
+```
+
+
+# apply
+```{r, echo=FALSE}
+tmp <- apply(Firstrows, 2, range)
+tmp
+
+myfunction <- function(tatsuya){Firstrows[1:2]}
+
+
+
+
+
+
+
+
+
+
